@@ -1,44 +1,36 @@
-var addButton = document.getElementById("add-button");
-var toDoTask = document.getElementById("task-field");
-var toDoList = document.getElementById("todo-list");
+let addButton = document.getElementById("add-button");
+let toDoTask = document.getElementById("task-field");
+let toDoList = document.getElementById("todo-list");
+let validationMsg = document.getElementById("validationMessage");
 
 function addToDoItem() {
-    var itemText = toDoTask.value;
-    newToDoItem(itemText, false);
-}
-function onClick() {
-
-}
-function toggleToDoItemState() {
-    if (this.classList.contains("completed")) {
-        this.classList.remove("completed");
-
-    } else {
-        this.classList.add("completed");
-        alert("completed");
-        this.classList.add("checked");
-    }
+  let itemText = toDoTask.value;
+  newToDoItem(itemText);
 }
 
-function newToDoItem(itemText, completed) {
-    if (document.getElementById("task-field").value == ""){
-    var validationMsg = document.getElementById("validationMessage");
-    validationMsg.textContent="You should add a task first !";
-    }
-    else {
-        var toDoItem = document.createElement("li");
-        var toDoText = document.createTextNode(itemText);
-        var box = document.createElement("input");
-        box.type = "checkbox";
-        toDoItem.appendChild(box);
-        toDoItem.appendChild(toDoText);
-        if (completed) {
-            toDoItem.classList.add("completed");
-        }
+const CHECKBOX_CLASSNAME = "completed";
 
-        toDoList.appendChild(toDoItem);
-        toDoItem.addEventListener("dblclick", toggleToDoItemState);
-    }
+function checkboxOnChange(event) {
+  event.target.classList.toggle(CHECKBOX_CLASSNAME, event.target.checked);
+}
+
+const ERROR_MESSAGE = "Task description is required.";
+function newToDoItem(itemText) {
+  // undefined, null, '', false, 0
+  if (!toDoTask.value) {
+    validationMsg.textContent = ERROR_MESSAGE;
+  } else {
+    let toDoItem = document.createElement("li");
+    let toDoText = document.createTextNode(itemText);
+    let checkbox = document.createElement("input");
+
+    checkbox.type = "checkbox";
+
+    checkbox.onchange = checkboxOnChange;
+    toDoItem.appendChild(checkbox);
+    toDoItem.appendChild(toDoText);
+    toDoList.appendChild(toDoItem);
+  }
 }
 
 addButton.addEventListener("click", addToDoItem);

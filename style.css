@@ -1,66 +1,74 @@
- body{
-    background-image: url("images/background-img.jpg");
- }
- main{
-    padding: 2em;
-    width:600px;
-    border-style: solid;
-    border-color: white;
-    font-family: monospace;
-    border-left: 6px solid rgb(13, 71, 71);
-    border-right: 6px solid rgb(13, 71, 71);
-    margin-top: 100px;
-    margin-left: 250px;
-    margin-right: 200px;
-    text-align: center;
+body {
+  background-image: url("images/background-img.jpg");
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  padding: 2em;
+  width: 600px;
+  border-style: solid;
+  border-color: white;
+  border-left: 6px solid rgb(13, 71, 71);
+  border-right: 6px solid rgb(13, 71, 71);
+  margin-top: 100px;
+  margin-left: 250px;
+  margin-right: 200px;
+  text-align: center;
 }
 
 #todo-list {
-    text-align: left;
-    color: white;
-    font-size: 20px;
+  text-align: left;
+  color: white;
+  font-size: 20px;
 }
+
 header {
-    text-align: center;
-    color: white;
-    font-size: 20px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
 }
 
 #task-field {
-    background-color: white;
-    width: 300px;
-    height: 20px;
+  background-color: white;
+  width: 300px;
+  height: 20px;
 }
+
 #add-button {
-    background-color: black;
-    display:inline-block;
-    color: white;
-    width: fit-content;
-    height: 20px;
-    font-weight:300;
-    border-radius:2em;
-    border:0.1em solid #FFFFFF;
-    margin:0 0.3em 0.3em 0;
-    transition: all 0.2s;
-    text-decoration:none;
-    box-sizing: border-box;
-    font-family: 'Roboto',sans-serif;
+  background-color: black;
+  color: white;
+  width: fit-content;
+  height: 20px;
+  font-weight: 300;
+  border-radius: 2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  transition: all 0.2s;
+  text-decoration: none;
+  box-sizing: border-box;
 }
-#add-button:hover{
-    color:#000000;
-    background-color:#FFFFFF;
-}
-#validationMessage{
-    color: white;
 
+#add-button:hover {
+  color: #000000;
+  background-color: #ffffff;
 }
+
+#validationMessage {
+  color: white;
+}
+
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 1cm;
-    width: 100%;
-    color: white;
-    text-align: center;
-  }
+  position: fixed;
+  left: 0;
+  bottom: 1cm;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
 
 
+/* NEW */
+
+.todo-form {
+    display: flex;
+}
